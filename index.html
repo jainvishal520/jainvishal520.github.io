@@ -1,81 +1,1463 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
-    <title>The Wintersmith's blog
-    </title>
-    <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="Ramblings of an immor(t)al demigod">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
-    <link rel="stylesheet" href="/css/main.css">
-  </head>
-  <body>
-    <header class="header">
-      <div class="content-wrap">
-        <div class="logo">
-          <h1><a href="http://localhost:8080">The Wintersmith's blog</a></h1>
-          <p class="description">Ramblings of an immor(t)al demigod</p>
-        </div>
-      </div>
-    </header>
-    <div id="content">
-      <div class="content-wrap">
-        <article class="article intro">
-          <header>
-            <p class="date"><span>30. April 2013</span></p>
-            <h2><a href="/articles/hello-world/">README</a></h2>
-          </header>
-          <section class="content"><p>Welcome to your new blog! This is the default blog template with <span class="caps">RSS</span>, pagination and an archive. There are other templates available – run <code>wintersmith new --help</code> to list&nbsp;them.</p>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-clearmin.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/roboto.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/material-design.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/small-n-flat.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/c3.min.css">
+        <title>Clearmin template</title>
+        <style>
 
-            <p class="more"><a href="/articles/hello-world/">more</a></p>
-          </section>
-        </article>
-        <article class="article intro">
-          <header>
-            <p class="date"><span>01. April 2013</span></p>
-            <h2><a href="/articles/red-herring/">A red herring</a></h2>
-          </header>
-          <section class="content"><p>A long time ago, when the world was young – someone put some food on their tongue.
-They tasted the food, and thought it was nice. Most fruit liked it – but banana’s thought&nbsp;twice.</p>
-<p>
-            <p class="more"><a href="/articles/red-herring/">more</a></p>
-          </section>
-        </article>
-        <article class="article intro">
-          <header>
-            <p class="date"><span>01. October 2012</span></p>
-            <h2><a href="/articles/another-test/">Code and stuff!</a></h2>
-          </header>
-          <section class="content"><p>Syntax highlighting with <a href="http://softwaremaniacs.org/soft/highlight/en/">highlight.js</a>.
-The theme used is tomorrow, you can find more themes <a href="http://jmblog.github.io/color-themes-for-highlightjs/">here</a>.</p>
-<p>
-            <p class="more"><a href="/articles/another-test/">more</a></p>
-          </section>
-        </article>
-      </div>
-    </div>
-    <footer>
-      <div class="content-wrap">
-        <div class="nav"><a href="/archive.html">&laquo; Archives</a><a href="/page/2/">Next page &raquo;</a>
-        </div>
-        <section class="about"><p>Wintersmith is made by <a href="http://johan-nordberg.com">Johan Nordberg</a> and licensed under the <a href="http://opensource.org/licenses/MIT">MIT-license</a>.
-This footer text can be edited in about.md</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat.</p>
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-dolore eu fugiat nulla pariatur.</p>
-<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-deserunt mollit anim id est laborum.</p>
+/*body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  width: 960px;
+}*/
+.tooltip {
+  position: absolute;
+  width: 200px;
+  height: 28px;
+  pointer-events: none;
 
-        </section>
-        <section class="copy">
-          <p>&copy; 2016 Someone &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a>
-          </p>
-        </section>
-      </div>
-    </footer>
-  </body>
+}
+.qqq{
+	position:relative;
+}
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: steelblue;
+  fill-opacity: .9;
+}
+svg{
+	height: 570px;
+}
+.x.axis path {
+  display: none;
+}
+
+label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.logo{
+
+    vertical-align: middle;
+    text-align: -webkit-center;
+    font-size: 28px;
+    cursor: pointer;
+
+}
+
+</style>
+    </head>
+    <body class="cm-no-transition cm-2-navbar">
+        <div id="cm-menu">
+            <nav class="cm-navbar cm-navbar-primary">
+                <div class="cm-flex logo">LOGO</div>
+                <div class="btn btn-primary md-menu-white" data-toggle="cm-menu"></div>
+            </nav>
+            <div id="cm-menu-content">
+                <div id="cm-menu-items-wrapper">
+                    <div id="cm-menu-scroller">
+                        <ul class="cm-menu-items">
+                            
+                            <li class="active"><a href="dashboard-sales.html" class="sf-dashboard">Dashboard</a></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header id="cm-header">
+            <nav class="cm-navbar cm-navbar-primary">
+                <div class="btn btn-primary md-menu-white hidden-md hidden-lg" data-toggle="cm-menu"></div>
+                <div class="cm-flex">
+                    <h1>Dashboard</h1> 
+                    <form id="cm-search" action="index.html" method="get">
+                        <input type="search" name="q" autocomplete="off" placeholder="Search...">
+                    </form>
+                </div>
+                <div class="pull-right">
+                    <div id="cm-search-btn" class="btn btn-primary md-search-white" data-toggle="cm-search"></div>
+                </div>
+                <div class="dropdown pull-right">
+                    <button class="btn btn-primary md-notifications-white" data-toggle="dropdown"> <span class="label label-danger">23</span> </button>
+                    <div class="popover cm-popover bottom">
+                        <div class="arrow"></div>
+                        <div class="popover-content">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <h4 class="list-group-item-heading text-overflow">
+                                        <i class="fa fa-fw fa-envelope"></i> Nunc volutpat aliquet magna.
+                                    </h4>
+                                    <p class="list-group-item-text text-overflow">Pellentesque tincidunt mollis scelerisque. Praesent vel blandit quam.</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <h4 class="list-group-item-heading">
+                                        <i class="fa fa-fw fa-envelope"></i> Aliquam orci lectus
+                                    </h4>
+                                    <p class="list-group-item-text">Donec quis arcu non risus sagittis</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <h4 class="list-group-item-heading">
+                                        <i class="fa fa-fw fa-warning"></i> Holy guacamole !
+                                    </h4>
+                                    <p class="list-group-item-text">Best check yo self, you're not looking too good.</p>
+                                </a>
+                            </div>
+                            <div style="padding:10px"><a class="btn btn-success btn-block" href="#">Show me more...</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown pull-right">
+                    <button class="btn btn-primary md-account-circle-white" data-toggle="dropdown"></button>
+                    <ul class="dropdown-menu">
+                        <li class="disabled text-center">
+                            <a style="cursor:default;"><strong>Vishal Jain</strong></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-cog"></i> Settings</a>
+                        </li>
+                        <li>
+                            <a href="login.html"><i class="fa fa-fw fa-sign-out"></i> Sign out</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="cm-navbar cm-navbar-default cm-navbar-slideup">
+                <div class="cm-flex">
+                    <div class="nav-tabs-container">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="dashboard-sales.html">Bar Graph</a></li>
+                            <li><a href="dashboard-server_stats.html">Scatter graph</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pull-right" style="border-left:1px solid #e5e5e5"><a title="Download as PDF" class="btn btn-default btn-light md-file-download"></a></div>
+                <div class="pull-right"><a title="Customize indicators" class="btn btn-default btn-light md-settings"></a></div>
+            </nav>
+        </header>
+        <div id="global">
+            <div class="container-fluid">
+               
+                <div class="panel panel-default">
+                    <div class="panel-heading">Task1 : Distribution of Customers by State (Bar graph sorted by customer count in descending order). </div>
+                     
+                    <div  class="qqq panel-body">
+                   
+                    </div>
+                </div>
+          
+               
+            </div>
+            <footer class="cm-footer"><span class="pull-left">Connected as Vishal Jain</span><span class="pull-right">&copy; Vishal</span></footer>
+        </div>
+        <script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+        <script src="assets/js/jquery.mousewheel.min.js"></script>
+        <script src="assets/js/jquery.cookie.min.js"></script>
+        <script src="assets/js/fastclick.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/clearmin.min.js"></script>
+    
+  
+        <script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+// setup x 
+var xValue = function(d) { return d[ 'State' ] }, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+// setup y
+var yValue = function(d) { return d["Coeur Customer Count"];}, // data -> value
+    yScale = d3.scale.linear().range([height, 0]), // value -> display
+    yMap = function(d) { return yScale(yValue(d));}, // data -> display
+    yAxis = d3.svg.axis().scale(yScale).orient("left");
+
+    // setup fill color
+var cValue = function(d) { return d.Manufacturer;},
+    color = d3.scale.category10();
+
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1, 1);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+
+var svg = d3.select(".qqq").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var tooltip = d3.select(".qqq").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+d3.csv("aaaa.csv", function(error, data) {
+
+  data.forEach(function(d) {
+    d['Coeur Customer Count'] = +d['Coeur Customer Count'];
+  });
+
+  x.domain(data.map(function(d) { return d.State; }));
+  y.domain([0, d3.max(data, function(d) { return d['Coeur Customer Count']; })]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", "-.55em")
+      .attr("transform", "rotate(-90)" );
+
+
+
+
+
+
+
+
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Frequency");
+
+  svg.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.State); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d['Coeur Customer Count']); })
+      .attr("height", function(d) { return height - y(d['Coeur Customer Count']); })
+              .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html(d["Coeur Customer Count"] + "<br/> (" + xValue(d) 
+          + ", " + yValue(d) + ")")
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
+
+  d3.select("input").on("change", change);
+
+  var sortTimeout = setTimeout(function() {
+    d3.select("input").property("checked", true).each(change);
+  }, 2000);
+
+  function change() {
+    clearTimeout(sortTimeout);
+
+    // Copy-on-write since tweens are evaluated after a delay.
+    var x0 = x.domain(data.sort(this.checked
+        ? function(a, b) { return b['Coeur Customer Count'] - a['Coeur Customer Count']; }
+        : function(a, b) { return d3.ascending(a.State, b.State); })
+        .map(function(d) { return d.State; }))
+        .copy();
+
+    svg.selectAll(".bar")
+        .sort(function(a, b) { return x0(a.State) - x0(b.State); })
+                    .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html(d["Coeur Customer Count"] + "<br/> (" + xValue(d) 
+          + ", " + yValue(d) + ")")
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
+
+
+    var transition = svg.transition().duration(750),
+        delay = function(d, i) { return i * 50; };
+
+    transition.selectAll(".bar")
+        .delay(delay)
+        .attr("x", function(d) { return x0(d.State); });
+
+    transition.select(".x.axis")
+       .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", "-.55em")
+      .attr("transform", "rotate(-90)" );
+  }
+});
+
+</script>
+    </body>
 </html>
+
+
+
+
+
+
+
+<!--SORTED BAR GRAPH <!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  width: 960px;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: steelblue;
+  fill-opacity: .9;
+}
+svg{
+	height: 570px;
+}
+.x.axis path {
+  display: none;
+}
+
+label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+</style>
+<label><input type="checkbox"> Sort values</label>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1, 1);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("aaaa.csv", function(error, data) {
+
+  data.forEach(function(d) {
+    d['Coeur Customer Count'] = +d['Coeur Customer Count'];
+  });
+
+  x.domain(data.map(function(d) { return d.State; }));
+  y.domain([0, d3.max(data, function(d) { return d['Coeur Customer Count']; })]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", "-.55em")
+      .attr("transform", "rotate(-90)" );
+
+
+
+
+
+
+
+
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Frequency");
+
+  svg.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.State); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d['Coeur Customer Count']); })
+      .attr("height", function(d) { return height - y(d['Coeur Customer Count']); });
+
+  d3.select("input").on("change", change);
+
+  var sortTimeout = setTimeout(function() {
+    d3.select("input").property("checked", true).each(change);
+  }, 2000);
+
+  function change() {
+    clearTimeout(sortTimeout);
+
+    // Copy-on-write since tweens are evaluated after a delay.
+    var x0 = x.domain(data.sort(this.checked
+        ? function(a, b) { return b['Coeur Customer Count'] - a['Coeur Customer Count']; }
+        : function(a, b) { return d3.ascending(a.State, b.State); })
+        .map(function(d) { return d.State; }))
+        .copy();
+
+    svg.selectAll(".bar")
+        .sort(function(a, b) { return x0(a.State) - x0(b.State); });
+
+    var transition = svg.transition().duration(750),
+        delay = function(d, i) { return i * 50; };
+
+    transition.selectAll(".bar")
+        .delay(delay)
+        .attr("x", function(d) { return x0(d.State); });
+
+    transition.select(".x.axis")
+       .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", "-.55em")
+      .attr("transform", "rotate(-90)" );
+  }
+});
+
+</script>
+</body>
+</html> -->
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+
+
+<style>
+body {
+  font: 11px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+}
+
+.tooltip {
+  position: absolute;
+  width: 200px;
+  height: 28px;
+  pointer-events: none;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script>
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+/* 
+ * value accessor - returns the value to encode for a given data object.
+ * scale - maps value to a visual display encoding, such as a pixel position.
+ * map function - maps from data value to display value
+ * axis - sets up axis
+ */ 
+
+// setup x 
+var xValue = function(d) { return d.Calories;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+// setup y
+var yValue = function(d) { return d["Protein (g)"];}, // data -> value
+    yScale = d3.scale.linear().range([height, 0]), // value -> display
+    yMap = function(d) { return yScale(yValue(d));}, // data -> display
+    yAxis = d3.svg.axis().scale(yScale).orient("left");
+
+// setup fill color
+var cValue = function(d) { return d.Manufacturer;},
+    color = d3.scale.category10();
+
+// add the graph canvas to the body of the webpage
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// add the tooltip area to the webpage
+var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+// load data
+d3.csv("cereal.csv", function(error, data) {
+
+  // change string (from CSV) into number format
+  data.forEach(function(d) {
+    d.Calories = +d.Calories;
+    d["Protein (g)"] = +d["Protein (g)"];
+//    console.log(d);
+  });
+
+  // don't want dots overlapping axis, so add in buffer to data domain
+  xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
+  yScale.domain([d3.min(data, yValue)-1, d3.max(data, yValue)+1]);
+
+  // x-axis
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("Calories");
+
+  // y-axis
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Protein (g)");
+
+  // draw dots
+  svg.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", 3.5)
+      .attr("cx", xMap)
+      .attr("cy", yMap)
+      .style("fill", function(d) { return color(cValue(d));}) 
+      .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html(d["Cereal Name"] + "<br/> (" + xValue(d) 
+	        + ", " + yValue(d) + ")")
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
+
+  // draw legend
+  var legend = svg.selectAll(".legend")
+      .data(color.domain())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  // draw legend colored rectangles
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  // draw legend text
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d;})
+});
+
+</script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+
+<style>
+body {
+  font: 11px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+}
+
+.tooltip {
+  position: absolute;
+  width: 200px;
+  height: 28px;
+  pointer-events: none;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script>
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+/* 
+ * value accessor - returns the value to encode for a given data object.
+ * scale - maps value to a visual display encoding, such as a pixel position.
+ * map function - maps from data value to display value
+ * axis - sets up axis
+ */ 
+
+// setup x 
+var xValue = function(d) { return d[ 'Total Number of Orders' ] }, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+// setup y
+var yValue = function(d) { return d["Total Dollars Spent"];}, // data -> value
+    yScale = d3.scale.linear().range([height, 0]), // value -> display
+    yMap = function(d) { return yScale(yValue(d));}, // data -> display
+    yAxis = d3.svg.axis().scale(yScale).orient("left");
+
+// setup fill color
+var cValue = function(d) { return d.Manufacturer;},
+    color = d3.scale.category10();
+
+// add the graph canvas to the body of the webpage
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// add the tooltip area to the webpage
+var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+// load data
+d3.csv("qqqq.csv", function(error, data) {
+
+  // change string (from CSV) into number format
+  data.forEach(function(d) {
+    d[ 'Total Number of Orders' ]  = +d[ 'Total Number of Orders' ] ;
+    d["Total Dollars Spent"] = +d["Total Dollars Spent"];
+//    console.log(d);
+  });
+
+  // don't want dots overlapping axis, so add in buffer to data domain
+  xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
+  yScale.domain([d3.min(data, yValue)-1, d3.max(data, yValue)+1]);
+
+  // x-axis
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("Total Number of Orders");
+
+  // y-axis
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Total Dollars Spent");
+
+  // draw dots
+  svg.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", 3.5)
+      .attr("cx", xMap)
+      .attr("cy", yMap)
+      .style("fill", function(d) { return color(cValue(d));}) 
+      .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html(d["Cereal Name"] + "<br/> (" + xValue(d) 
+          + ", " + yValue(d) + ")")
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
+
+  // draw legend
+  var legend = svg.selectAll(".legend")
+      .data(color.domain())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  // draw legend colored rectangles
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  // draw legend text
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d;})
+});
+
+</script>
+</body>
+</html> -->
+
+
+<!--COMPLETE SERVICE PROVIDER AND FACTORY(INJECTORS) EXAMPLE
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Angular</title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module('myapp',[]);
+	app.config(function($provide){
+		$provide.provider('MathService',function(){
+			this.$get = function(){
+				var factory = {};
+				factory.multiply = function(a,b){
+					return a*b;
+				}
+				return factory;
+			};
+		});
+	});
+	app.value('defaultInput',5);
+	app.factory('MathService',function(){
+		var factory = {};
+		factory.multiply = function(a,b){
+			return a * b;
+		}
+		return factory;
+	});
+	app.service('CalcService',function(MathService){
+		this.square = function(a){
+			return MathService.multiply(a,a);
+		}
+	});
+	app.controller('CalcController',function($scope,CalcService,defaultInput){
+		$scope.number = defaultInput;
+		$scope.result = CalcService.square($scope.number);
+		$scope.square = function(){
+			$scope.result = CalcService.square($scope.number);
+		};
+	});
+</script>
+
+	</head>
+	<body ng-app="myapp" ng-controller="CalcController">
+<h2>AngularJS Sample Application</h2>
+<div  >
+<p>Enter a number: <input type="number" ng-model="number" />
+<button ng-click="square()">X<sup>2</sup></button>
+<p>Result: {{result}}</p>
+</div>
+</body>
+
+</html>	
+
+COMPLETE SERVICE PROVIDER AND FACTORY(INJECTORS) EXAMPLE-->
+
+
+
+
+
+<!-- SQUARE ON CLICKING BUTTON USING SERVICE AND FACTORY
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Angular</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+
+	<script type="text/javascript">
+	var app = angular.module('myapp',[]);
+	app.factory('MathService',function(){
+		var factory = {};
+		factory.multiply = function(a,b){
+			return a*b;
+		}
+		return factory;
+	});
+
+	app.service('CalcService',function(MathService){
+		this.eee = function(a){
+			return MathService.multiply(a,a);
+		}
+	});
+
+
+	app.controller('testapp',function($scope,CalcService){
+		$scope.square = function(){
+		$scope.result = CalcService.eee($scope.number);
+		}
+
+
+	});
+
+	</script>
+</head>
+<body ng-app="myapp" ng-controller="testapp">
+Enter a number : <input type="text" ng-model="number" /> <button ng-click="square()">X</button>
+<br>
+Result : <span  >{{result}}</span>
+
+
+</body>
+</html>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SQUARE ON CLICKING BUTTON SIMPLE METHOD
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Angular</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular-route.min.js"></script>
+
+	<script type="text/javascript">
+	var app = angular.module('myapp',[]);
+	app.controller('testapp',function($scope){
+		
+		$scope.square = function(){
+			$scope.result = $scope.number*$scope.number;
+		}
+	});
+
+	</script>
+</head>
+<body ng-app="myapp" ng-controller="testapp">
+Enter a number : <input type="text" ng-model="number" /> <button ng-click="square()">X</button>
+<br>
+Result : <span  >{{result}}</span>
+
+
+</body>
+</html>
+-->
+
+
+
+
+
+<!--SIMPLE SCOPE INHERITENCE EXAMPLE
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Angular</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular-route.min.js"></script>
+
+	<script type="text/javascript">
+	var app = angular.module('myapp',[]);
+	app.controller('controller1',function($scope){
+		$scope.message = 'hello' ; 
+		$scope.type = 'type1';
+	});
+		app.controller('controller2',function($scope){
+
+	});
+			app.controller('controller3',function($scope){
+		$scope.message = 'hello im in controller3 and overriden' ; 
+		
+	});
+	</script>
+</head>
+<body ng-app="myapp" ng-controller="controller1" >
+<div >
+	{{message}} : {{type}}
+</div>
+<div ng-controller="controller2">
+	{{message}} : {{type}}
+</div>
+<div ng-controller="controller3">
+	{{message}} : {{type}}
+</div>
+
+
+</body>
+</html>
+
+-->
+
+
+<!-- BASIC ROUTING EXAMPLE
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Angular</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular-route.min.js"></script>
+
+	<script type="text/javascript">
+var app = angular.module('myapp',['ngRoute']);
+app.config(function($routeProvider){
+	$routeProvider
+	.when('/',{
+		templateUrl	 : 'page1.html'
+	})
+	.when('/other',{
+		templateUrl : 'page2.html'
+	})
+	.otherwise({
+		redirectTo : '/'
+	})
+})
+		</script>
+</head>
+<body ng-app="myapp" >
+<div ng-view></div>
+</body>
+</html>
+-->
+
+
+
+
+
+<!--AJAX IN ANGULAR RECORDS.JSON
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Angular</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('myapp',[]);
+		app.controller('testapp',function($scope,$http){
+			var url = "records.json";
+			$http.get(url).success(function(response){
+				$scope.sas = response;
+
+			});
+		});
+	</script>
+</head>
+<body ng-app="myapp" ng-controller="testapp">
+<ul>
+<li ng-repeat= "student in sas.records">
+{{student.name}}  {{student.age}}  {{student.street}}
+</li>
+</ul>
+</body>
+</html>
+
+
+-->
+
+
+
+
+
+
+<!--MAIN.HTML,SUBJECT.HTML,CONTROLLER.JS   //EXAMPLE OF INCLUDE//
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Angular</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="testapp">
+	<div ng-include="'main.html'"></div>
+	<div ng-include="'subject.html'"></div>
+</body>
+</html>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- TODOAPP TODO.JS
+
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Angular</title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/todo.js"></script>
+<style>
+span.true{
+	text-decoration: line-through;
+	font-style: italic;
+	color:gray;
+
+}
+span[contentEditable="true"]{
+	background-color: gray;
+	padding:3px;
+	color:white;
+}
+</style>
+	</head>
+	<body ng-app="myapp" ng-controller="todoapp">
+		<h2 style="text-align:center;">Add a Task</h2>
+		<input ng-model="task" ng-keyup="searchEnter()" style="width:300px;padding:10px;margin:0 auto;display:block" type="text" />
+		<div id="tasksToShow">
+			<ul>
+				<li  ng-repeat="oneTask in tasks">
+				<input type="checkbox" ng-model="oneTask.Status"  />
+				<span contentEditable="false" class="{{oneTask.Status}}" ng-dblclick="contentEdit()" ng-keydown="searchAgain()">{{oneTask.TaskMessage}}</span>
+				</li>
+			</ul>
+		</div>
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-SNG-SHOW DIRECTIVE
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Angular</title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
+
+	</head>
+	<body ng-app="myapp" ng-controller="show">
+		<button ng-click="toggle()">toggle message </button>
+		<div class="message" ng-show="show=='msg1'">This is message 1 </div>
+		<div class="message" ng-show="show=='msg2'">This is message 2 </div>
+	</body>
+
+</html>
+
+
+
+
+-->
+
+
+
+
+
+
+
+<!-- SERIVE VS FACTORY VS PROVIDER
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Angular</title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/services.js"></script>
+
+	</head>
+	<body ng-app="myapp" ng-controller="provider">
+		{{greet_message}}
+	</body>
+
+</html>
+
+END OF SERIVE VS FACTORY VS PROVIDER-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- PROVIDER
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Angular</title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/services.js"></script>
+
+	</head>
+	<body ng-app="myapp" ng-controller="provider">
+		{{greet_message}}
+	</body>
+
+</html>
+END OF PROVIDER-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SERVICES AND FACTORIES
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Angular</title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/services.js"></script>
+
+	</head>
+	<body ng-app="myapp" ng-controller="service">
+		<input ng-click="generateRandom()" type="button" value="some random number" />
+		<br/>
+		{{randomNum}} {{randomNum2}}
+		
+	</body>
+
+</html>
+END OF SERVICES AND FACTORIES-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- $SCOPE.$DIGEST
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Angular</title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
+
+	</head>
+	<body ng-app="myapp" ng-controller="digest">
+		{{randomVar}} </br>
+		<input ng-click="update()" type="button" value="some random variable" />
+		
+	</body>
+
+</html>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- $SCOPE$WATCH
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Angular</title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
+
+	</head>
+	<body ng-app="myapp" ng-controller="watch">
+		<input type="text" ng-model="message">
+		you updated textbox {{counter}} time
+	</body>
+
+</html>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--SEARCH BOX
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Angular</title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
+
+	</head>
+	<body ng-app="myapp">
+		<div ng-controller="person">
+			<h2>look at this shit</h2>
+			<div>
+				Global search <input type="text" ng-model="searchbox.$" /></br>
+				Name search<input type="text" ng-model="searchbox.name" /></br>
+				Age search<input type="text" ng-model="searchbox.age" /></br>
+				Street search <input type="text" ng-model="searchbox.street" /></br>
+			</div>
+			<p ng-repeat="p in guy | filter:searchbox">
+				Name of guy :  {{p.name}} </br> Age of guy : {{p.age}}  </br>  Street of guy : {{p.street}}.
+
+			</p>
+		</div>
+	</body>
+
+</html>  
+
+-->
+
+
+
+
+
+
+
+
+
+
+<!--repeat by ng-init
+
+
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Angular</title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+
+
+
+	</head>
+	<body ng-app="">
+		<div ng-init="persons=[{name:'vishal',age:'20'},{name:'vishal',age:'20'},{name:'vishal',age:'20'},{name:'vishal',age:'20'}]"></div>
+		<p ng-repeat="person in persons">
+		Name : {{person.name}} </br>
+		Age : {{person.age}}
+
+		</p>
+	</body>
+
+</html>  
+
+
+-->

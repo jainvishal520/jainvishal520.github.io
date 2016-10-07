@@ -7,6 +7,11 @@ clear: both;
 margin-left: 36%;
 text-align: center;
 }
+.page-header {
+    padding-bottom: 0px;
+    margin: 20px 0 20px;
+    border-bottom: 1px solid #eee;
+}
 .table-company-information > tbody > tr {
 border-top: 1px solid rgb(221, 221, 221);
 }
